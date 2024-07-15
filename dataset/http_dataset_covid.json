@@ -1,0 +1,22 @@
+{
+	"name": "http_dataset_covid",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "http_covid_data_link",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "covid19/agecasesnational/csv/data.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
