@@ -93,7 +93,7 @@
 				"     count = sum(daily_count),",
 				"     columnNaming: '$N_$V',",
 				"     lateral: true) ~> pivot1",
-				"pivot1, source2 lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"pivot1, source2 lookup(pivot1@country == source2@country,",
 				"     multiple: false,",
 				"     pickup: 'any',",
 				"     broadcast: 'auto')~> lookup1",
