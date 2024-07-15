@@ -19,6 +19,9 @@
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "pivot1"
 				}
 			],
 			"scriptLines": [
@@ -26,11 +29,11 @@
 				"          country as string,",
 				"          country_code as string,",
 				"          continent as string,",
-				"          population as string,",
+				"          population as integer,",
 				"          indicator as string,",
-				"          daily_count as string,",
-				"          date as string,",
-				"          rate_14_day as string,",
+				"          daily_count as integer,",
+				"          date as date,",
+				"          rate_14_day as double,",
 				"          source as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
@@ -49,7 +52,16 @@
 				"               'reported' + '_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> select1"
+				"     skipDuplicateMapOutputs: false) ~> select1",
+				"select1 pivot(groupBy(country,",
+				"          country_code,",
+				"          population,",
+				"          source,",
+				"          reported_date),",
+				"     pivotBy(indicator, ['confirmed cases', 'deaths']),",
+				"     count = sum(daily_count),",
+				"     columnNaming: '$N_$V',",
+				"     lateral: true) ~> pivot1"
 			]
 		}
 	}
