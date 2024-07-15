@@ -37,7 +37,7 @@
 				"     validateSchema: false,",
 				"     limit: 2000000,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(continet == 'Europe' && not(isNull(country_code))) ~> filter1",
+				"source1 filter(continent == 'Europe' && not(isNull(country_code))) ~> filter1",
 				"filter1 select(mapColumn(",
 				"          country,",
 				"          country_code,",
