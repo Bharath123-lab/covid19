@@ -50,17 +50,39 @@
 				"inputs": [
 					{
 						"referenceName": "http_dataset_covid",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"relativename": {
+								"value": "@variables('relativenmae')",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "covid_info_copy",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@variables('filename')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"variables": {
+			"relativenmae": {
+				"type": "String",
+				"defaultValue": "cloudboxacademy/covid19/main/ecdc_data/hospital_admissions.csv"
+			},
+			"filename": {
+				"type": "String",
+				"defaultValue": "hospital_admissions.csv"
+			}
+		},
 		"annotations": []
 	}
 }
