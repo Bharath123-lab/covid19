@@ -3,10 +3,19 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "http_covid_data_link",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"sourceurl": {
+					"value": "@dataset().sourceurl",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"relativename": {
+				"type": "string"
+			},
+			"sourceurl": {
 				"type": "string"
 			}
 		},
