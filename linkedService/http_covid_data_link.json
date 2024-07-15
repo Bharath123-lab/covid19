@@ -4,8 +4,8 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://www.ecdc.europa.eu",
-			"enableServerCertificateValidation": true,
+			"url": "https://raw.githubusercontent.com",
+			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
 	}
