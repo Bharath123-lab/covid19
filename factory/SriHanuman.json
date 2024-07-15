@@ -1,0 +1,9 @@
+{
+	"name": "SriHanuman",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3b5cb23a-d942-47c8-8dba-271e8d82e7a2",
+		"tenantId": "170ea15f-df32-41ac-8197-a6422330e625"
+	}
+}
